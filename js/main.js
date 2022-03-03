@@ -2,24 +2,17 @@ var elForm = document.querySelector(".form")
 var elInput = document.querySelector(".form__input")
 // var elButton = document.querySelector(".form__button")
 var elSpan = document.querySelector(".span")
-// var juft = document.querySelector(".head__boxing")
-// var toq = document.querySelector(".head__innering")
+var juft = document.querySelector(".head__boxing")
+var toq = document.querySelector(".head__innering")
 
 
-
+var first = [];
+var second = [];
 
 
 elForm.addEventListener("submit" , function(evt){
  evt.preventDefault();
-
-   
-
  var elVal = elInput.value;
- var first = [];
- var second = [];
- 
-
-
     if (elVal.length == 0){
         elSpan.textContent = "son kiritikmadi";
         elSpan.classList.add("result-succes")
@@ -39,11 +32,12 @@ elForm.addEventListener("submit" , function(evt){
         elSpan.textContent =   elInput.value + ` bu son juft`;
         elSpan.classList.add("result-succes")
         elSpan.classList.remove("result-error")
-
-
-       
+        
+        
+        
         first.push(Number(elVal));
         console.log(elVal);
+        juft.textContent = first
         
         return
 
@@ -60,6 +54,7 @@ elForm.addEventListener("submit" , function(evt){
       
         second.push(Number(elVal));
         console.log(elVal);
+        toq.textContent = second
         elInput.value = "";
         return
     }
